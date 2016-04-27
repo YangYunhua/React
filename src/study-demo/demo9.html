@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>my react demo</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+
+    /*一定要注意 创建组件的名称的第一个字母要大写*/
+    var MyComment=React.createClass({
+        getInitialState: function () {
+            return {value: 'Hello!'};
+        },
+
+        handleChange: function(event){
+            /*event.target.value读取用户输入*/
+            this.setState({value: event.target.value});
+        },
+        render: function () {
+            var value = this.state.value;
+            return(
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange}/>
+                        <p>{value}</p>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            <MyComment />,
+            document.getElementById('example')
+    );
+</script>
+
+</body>
+</html>
