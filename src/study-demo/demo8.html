@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>my react demo</title>
+</head>
+<body>
+<pre>
+    this.props和this.state都用于描述组件的特性
+    前者表示一旦定义就不再改变的特性
+    后者会随着用户互动而产生变化
+</pre>
+<div id="example"></div>
+<script type="text/babel">
+    var Button = React.createClass({
+        /*定义初始状态*/
+        getInitialState: function () {
+            return {liked: false};
+        },
+        /*用户点击事件，状态变化*/
+        handelClick: function () {
+            this.setState({liked: !this.state.liked});
+        },
+        render: function () {
+            var text = this.state.liked ? 'like' : 'haven\'t liked';
+            return(
+                    <p onClick={this.handelClick}>
+                        You {text} this.Click to toggle.
+                     </p>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <Button />,
+            document.getElementById('example')
+    );
+</script>
+</body>
+</html>
