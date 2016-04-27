@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>my seventh react demo</title>
+</head>
+<body>
+    <pre>
+        onClick的第一个C必须大写否则handleClick这个方法无效
+        还有在创建组件的render这个方法中在html的标签周围加注释无效会有错，页面无法运行
+    </pre>
+    <br>
+    <div id="example"></div>
+    <script type="text/babel">
+        var Mycomment = React.createClass({
+            handleClick: function () {
+                this.refs.myTextInput.focus();
+            },
+            render: function () {
+                return (
+                        <div>
+                            <input type="text" ref="myTextInput" />
+
+                            <input type="button" value="focus the text input" onClick={this.handleClick}/>
+                        </div>
+
+                );
+            }
+        });
+
+        ReactDOM.render(
+                <Mycomment />,
+                document.getElementById('example')
+        );
+
+    </script>
+</body>
+</html>
