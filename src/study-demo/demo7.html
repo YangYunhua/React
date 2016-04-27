@@ -17,6 +17,7 @@
     <script type="text/babel">
         var Mycomment = React.createClass({
             handleClick: function () {
+                /*this.refs[refName]属性获取的是真实的DOM*/
                 this.refs.myTextInput.focus();
             },
             render: function () {
