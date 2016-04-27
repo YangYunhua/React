@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>My first react demo</title>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      /*
+      ReactDOM.render();是react的最基本方法，
+      用于将模板转为html模板，并插入指定的DOM节点example。
+      */
+      ReactDOM.render(
+        <h1>Hello! world</h1>,
+        document.getElementById('example')
+        /*注意这边是getElementById，不是getElementsById
+        注意每一个标签结束或者每一个方法结束后都要有逗号隔开！如<h2></h2>,</p>,
+        */
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>My second react demo</title>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        /*
+        HTML语言直接写在javascript中，不加任何引号，此为JSX语法，它允许HTML与JS混写
+        JSX基本语法规则：
+        遇到HTML标签（以<开头），用HTML规则解析，
+        遇到代码块（以{开头），就用Js规则解析。
+        */
+        var name = ['Yangyh', 'Alice', 'hello'];
+        ReactDOM.render(
+                <div>
+                 {
+                     name.map(function (name) {
+                        return<div>Hello, {name}!</div>
+                    })
+                 }
+                </div>,
+                document.getElementById('example')
+        );
+    </script>
+</body>
+</html>
