@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <meta charset="UTF-8">
+  <title>My third react demo</title>
 </head>
 <body>
+<div id="example"></div>
+ React组件应用
+<p>React允许将代码封装组成组件（component），然后像插入普通HTML标签一样，在网页中插入这个组件。</p>
+<p>React.createClass方法用于生成组件</p>
+<p>每个组件都有自己的render方法用于输出组件。组件类的第一个字母必须大写，否则出错。如var hello是错误的</p>
+<!--组件只能包干一个顶层标签，否则报错
+如 “return <h1>Hello {this.props.name}</h1>,<p>1</p>;”
+或者“return<h1>Hello {this.props.name}</h1><p>1</p>;”
+      return<div> <h1>Hello {this.props.name}</h1></div>,是对的
+        -->
 
+<script type="text/babel">
+
+  var Hello  = React.createClass({
+    render: function() {
+      return <h1>Hello {this.props.name}</h1>;
+    }
+  });
+  ReactDOM.render(
+    <Hello  name="John" className="hello" />,
+    document.getElementById('example')
+    );
+</script>
 </body>
 </html>
